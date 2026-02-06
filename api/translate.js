@@ -18,9 +18,10 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: "openai/gpt-5.2",
         messages: [
-          { role: "system", content: "你是一个英语老师，翻译并分析单词语法。用---分隔翻译和分析。" },
+          { role: "system", content: "你是一个英语老师，翻译你是一个高效的翻译官，只输出翻译结果。" },
           { role: "user", content: text }
-        ]
+        ],
+         temperature: 0.3
       })
     });
 
