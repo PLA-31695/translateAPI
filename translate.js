@@ -9,14 +9,14 @@ export default async function handler(req, res) {
 
   try {
     // 这里以调用 DeepSeek 为例
-    const response = await fetch("https://api.deepseek.com/chat/completions", {
+    const response = await fetch("https://ai-gateway.vercel.sh/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${API_KEY}`
       },
       body: JSON.stringify({
-        model: "deepseek-chat",
+        model: "openai/gpt-5.2",
         messages: [
           { role: "system", content: "你是一个英语老师，翻译并分析单词语法。用---分隔翻译和分析。" },
           { role: "user", content: text }
